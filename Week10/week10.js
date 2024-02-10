@@ -144,21 +144,36 @@ findAnimal();
 //Задание 15
 // Допишите программу, которая вычисляет сколько лет прошло с летней олимпиады в Токио, Япония. Подсказка: 1. нужно создать переменную с текущим годом. 2. при вызове функции в круглые скобки нужно передать два параметра: текущий год и год летней олимпиады в Токио.
 const lastOlympicsYear = 2021;
-
-function calculateYearsSinceLastOlympics(a, b) {}
+const curentYear = 2024;
+function calculateYearsSinceLastOlympics(a, b) {
+    return a - b;
+}
 
 console.log(
-    'С момента летней олимпиады в Токио прошло ' + calculateYearsSinceLastOlympics() + ' года',
+    'С момента летней олимпиады в Токио прошло ' + calculateYearsSinceLastOlympics(curentYear,lastOlympicsYear) + ' года',
 );
 
 //Задание 16
 // Напишите программу, которая вычисляет возраст пользователя на основе его года рождения, будет выводить результат в консоль.
 const friendYearOfBirth = 1985;
 
-function calculateAge() {}
-
+function calculateAge(c,d) {
+    return c - d;
+}
+console.log( ' пользователю ' + calculateAge(curentYear,friendYearOfBirth) + ' года ');
 //Задание 17
 // Напишите функцию которая принимает ваш год рождения и возвращает ваш возраст. Обратите ваше внимание, что в глобальной зоне видимости есть переменная с текущим годом.
-
+const myYear = 1990;
+function myAge (x,y) {
+    return x - y;
+}
+console.log( ' мне ' + myAge(curentYear, myYear) + ' лет');
 //Задание 18
 // Напишите функцию, которая должна возводить число в заданную степень. Результат должен выводить в консоль в формате: console.log("Результат: " + result);
+
+function power(x, y) {
+   return Math.pow(x, y);
+}
+
+console.log("Результат: " + power(5,3));
+
