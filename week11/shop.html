@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>shop</title>
+    <style>
+      .container {
+        margin: auto;
+        max-width: 600px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">
+        <img src="imaes./images.jpeg" alt="крем " />
+        <div class="card_item">
+          <h2>крем-лиффтинг</h2>
+          <p class="text">
+            Лифтинг крем премиальной линии Frau Sigrid обладает выраженным
+            подтягивающим эффектом, повышает эластичность и упругость кожи
+          </p>
+          <p class="price" id="price1">18500</p>
+          <p quantity>1</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="imaes./Бе.jpeg" alt="крем " />
+        <div class="card_item">
+          <h2>патчи для глаз</h2>
+          <p class="text">
+            Гидрогелевые патчи для глаз GOLD оказывают лифтинг-эффект,
+            стимулируют обновление клеток кожи, повышают упругость и
+            эластичность.
+          </p>
+          <p class="price" id="price2">5000</p>
+          <p quantity>1</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="imaes./Без названия (1).jpeg" alt="патчи " />
+        <div class="card_item">
+          <h2>крем ночной</h2>
+          <p class="text">
+            Восстанавливающий Ночной Крем с Детокс-Эффектом насыщает кожу
+            кислородом, помогает ей выглядеть плотной и упругой
+          </p>
+          <p class="price" id="price3">12000</p>
+          <p quantity>1</p>
+        </div>
+      </div>
+      <button id="button">использовать купон на 20%</button>
+      <p>ИТОГО</p>
+      <p id="total"></p>
+    </div>
+    <script>
+      let a = document.getElementById("price1");
+      let b = document.getElementById("price2");
+      let c = document.getElementById("price3");
+      let sum = document.getElementById("total");
+      let but = document.getElementById("button");
+
+      function discount() {
+        // 1. Sozdat' peremennuiu textA, kotoraya budet = innerText ot a
+        let textA = a.innerText;
+        // 2. Sozdat' peremennuiu chisloA = Preobrazovat' v chislo s pomosh'yu parseFloat()
+        let chisloA = parseFloat(textA);
+        // 3. Sozdat' peremennuiu soSkidkoiA = chisloA * 0.8
+        let soSkidkoiA = chisloA * 0.8;
+        // 4. Zamenit' text v a novoi peremennoi soSkidkoiA
+        a.innerText = soSkidkoiA;
+
+        let textB = b.innerText;
+        let chisloB = parseFloat(textB);
+        let soSkidkoiB = chisloB * 0.8;
+        b.innerText = soSkidkoiB;
+
+        let textC = c.innerText;
+        let chisloC = parseFloat(textC);
+        let soSkidkoiC = chisloC * 0.8;
+        c.innerText = soSkidkoiC;
+        let totalSumm = soSkidkoiA + soSkidkoiB + soSkidkoiC;
+        sum.innerText = totalSumm;
+      }
+
+      but.addEventListener("click", discount);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      .finished {
+        color: gray;
+        text-decoration: line-through;
+      }
+      #todo {
+        padding: 10px;
+        width: 300px;
+        border: 2px solid #ddd;
+        border-radius: 5px;
+        margin-bottom: 10px;
+      }
+
+      #button {
+        padding: 10px 20px;
+        background-color: #5cb85c;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      body {
+        margin-left: 200px;
+      }
+      #list {
+        list-style: none;
+      }
+    </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>todo</title>
+  </head>
+  <body>
+    <h1>TOdo List</h1>
+    <input id="todo" type="text" placeholder="ввести новое задание" />
+    <button id="button">добавить</button>
+    <ul id="list"></ul>
+    <script>
+      let input = document.getElementById("todo");
+      let button = document.getElementById("button");
+      let ul = document.getElementById("list");
+
+      function addNewFunction() {
+        // coxранить значения в инпуте
+        //добавить к списку
+        //щчистить инпут
+        //
+        //
+        let text = input.value;
+        let newItem = document.createElement("li");
+        newItem.addEventListener("click", finish);
+        newItem.textContent = text;
+        ul.appendChild(newItem);
+        input.value = null;
+      }
+      button.addEventListener("click", addNewFunction);
+      /* шаг 2
+      1. на каждый эл списка повешать обр.событий на клик
+      
+
+      */
+      function finish(event) {
+        event.target.classList.toggle("finished");
+        console.log(event);
+      }
+    </script>
+  </body>
+</html>
