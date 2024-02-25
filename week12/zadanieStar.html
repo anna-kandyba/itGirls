@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <label for="input1">введите Ваше имя</label>
+    <input id="input1" type="text" />
+    <label for="input2">введите ссылку Вашего аватара</label>
+
+    <input id="input2" type="text" />
+    <label for="input3">оставьте комментарий</label>
+
+    <input id="input3" type="text" />
+    <button id="button">send</button>
+    <ul id="ul"></ul>
+    <script>
+      const inpName = document.getElementById("input1");
+      const inpLink = document.getElementById("input2");
+      const inpComment = document.getElementById("input3");
+      const btn = document.getElementById("button");
+      const ul = document.getElementById("ul");
+      function addComment() {
+        const name = inpName.value.trim().toLowerCase();
+
+        const firstLater = name[0].toUpperCase();
+        const newName = firstLater + name.substring(1);
+
+        const link = inpLink.value;
+        const coment = checkSpam(inpComment.value);
+        const li = document.createElement("li");
+        const p1 = document.createElement("p");
+        p1.innerText = newName;
+        li.appendChild(p1);
+
+        const img = document.createElement("img");
+        img.src = link;
+        li.appendChild(img);
+
+        const p2 = document.createElement("p");
+        p2.innerText = coment;
+        li.appendChild(p2);
+
+        ul.appendChild(li);
+      }
+      function checkSpam(text) {
+        const result = text
+          .toLowerCase()
+          .replaceAll("viagra", "****")
+          .replaceAll("xxx", "***");
+        return result;
+      }
+
+      btn.addEventListener("click", addComment);
+    </script>
+  </body>
+</html>

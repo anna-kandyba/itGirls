@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const alphabet = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя";
+      const index1 = Math.round(Math.random() * alphabet.length);
+      const index2 = Math.round(Math.random() * alphabet.length);
+      const index3 = Math.round(Math.random() * alphabet.length);
+      const index4 = Math.round(Math.random() * alphabet.length);
+      console.log(alphabet.charAt(index1));
+      const result =
+        alphabet.charAt(index1) +
+        alphabet.charAt(index2) +
+        alphabet.charAt(index3) +
+        alphabet.charAt(index4);
+      alert(result);
+    </script>
+  </body>
+</html>
