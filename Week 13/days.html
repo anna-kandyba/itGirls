@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin-left: 200px;
+        width: 400px;
+      }
+      #button {
+        padding: 10px 20px;
+        background-color: #5cb85c;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      .calc {
+        display: flex;
+        justify-content: space-between;
+      }
+      h1 {
+        text-align: center;
+      }
+      .parag {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Дни до дня рождения</h1>
+    <div class="calc">
+      <input id="days" type="date" />
+      <button id="button">Поcчитать</button>
+    </div>
+    <p id="paragraph" class="parag"></p>
+    <script src="days.js"></script>
+  </body>
+</html>
